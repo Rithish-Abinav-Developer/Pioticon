@@ -9,9 +9,16 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "aos": "^2.3.4",
+    "gsap": "^3.14.2",
+    "jquery": "^3.7.1",
     "next": "16.0.10",
+    "owl.carousel": "^2.3.4",
     "react": "19.2.1",
-    "react-dom": "19.2.1"
+    "react-countup": "^6.5.3",
+    "react-dom": "19.2.1",
+    "react-intersection-observer": "^10.0.0",
+    "swiper": "^12.0.3"
   },
   "devDependencies": {
     "babel-plugin-react-compiler": "1.0.0",
