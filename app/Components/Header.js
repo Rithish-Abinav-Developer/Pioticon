@@ -16,7 +16,7 @@ export default function Header() {
 
       <nav className={` ${shownav ? 'active' : ''}`}>
         <ul>
-            <li><Link href='about-us'>About Us</Link></li>
+            <li><Link href='/about-us'>About Us</Link></li>
 
             <li><Link href='#'>Services</Link>
             <ul className='sub_menu'>

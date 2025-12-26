@@ -8,7 +8,7 @@ import AnimatedHeading from '../Components/AnimatedHeading'
 export default function AboutUs() {
   return (
     <>
-    <section className='common_section core_values dark_bg_with_layer hero_section about_hero_section'>
+    <section className='common_section core_values dark_bg_with_layer hero_section inner_page about_hero_section'>
 
 <div className='container'>
     <div className='section_heading_wrapper left_align full_width' data-aos="fade-up">
@@ -308,7 +308,7 @@ export default function AboutUs() {
   <img src='/images/key_features.svg' alt='key_features' width="100%" />
 </div>
 
- <div className='content' >
+ <div className='content key_cards_grid' >
    <div className='key_card card_yellow' data-aos="fade-up">
     <h4>An integrated system</h4>
     <p className='text white_text'>An integrated system consisting of exemplary governance, management, and control services for every size, complexity, and type of projects, programs or portfolios</p>

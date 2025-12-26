@@ -5,7 +5,7 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 /* 
 body{
@@ -71,7 +71,7 @@ p.text {
   padding: 120px 0;
 }
 
-.hero_section {
+.hero_section.inner_page {
   padding-top: 150px;
 }
 
@@ -867,7 +867,7 @@ footer a:hover {
 }
 
 .about_hero_section {
-  overflow: visible;
+  overflow-y: visible;
   overflow-x: clip;
 }
 
@@ -875,7 +875,8 @@ footer a:hover {
 .about_hero_section::after {
   animation: none;
 }
-.about_overview {
+.about_overview,
+.service_overview {
   background-color: black;
 }
 
@@ -1105,12 +1106,17 @@ ul.list_with_icon li .list_content h4.text_blue {
   flex-direction: column;
   gap: 40px;
 }
-.key_features .content_area .content{
+.key_cards_grid{
   display: flex;
   gap: 30px;
 }
 
-.key_features .content_area .content .key_card{
+.key_cards_grid.no_padding  .key_card{
+  padding: 0;
+  border: none !important;
+}
+
+.key_cards_grid .key_card{
   width: calc(33.33% - 20px);
   display: flex;
   flex-direction: column;
@@ -1118,31 +1124,48 @@ ul.list_with_icon li .list_content h4.text_blue {
   padding-left: 16px;
 }
 
-.key_features .content_area .content .key_card.card_yellow{
+.key_cards_grid .key_card_icon{
+  width: 90px;
+ aspect-ratio: 1/1;
+}
+
+.key_cards_grid.key_cards_grid_4 .key_card{
+  width: calc(25% - 22.5px);
+}
+
+.key_cards_grid .key_card.card_yellow{
   border-left: solid var(--yellow) 3px;
 }
 
-.key_features .content_area .content .key_card.card_yellow h4{
+.key_cards_grid .key_card.card_yellow h4{
   color: var(--yellow);
 }
 
-.key_features .content_area .content .key_card.card_green{
+.key_cards_grid .key_card.card_green{
   border-left: solid var(--green) 3px;
 }
 
-.key_features .content_area .content .key_card.card_green h4{
+.key_cards_grid .key_card.card_green h4{
   color: var(--green);
 }
 
-.key_features .content_area .content .key_card.card_blue{
+.key_cards_grid .key_card.card_blue{
   border-left: solid var(--blue) 3px;
 }
 
-.key_features .content_area .content .key_card.card_blue h4{
+.key_cards_grid .key_card.card_blue h4{
   color: var(--blue);
 }
 
-.key_features .content_area .content .key_card h4{
+.key_cards_grid .key_card.card_white{
+  border-left: solid #B1B1B1 3px;
+}
+
+.key_cards_grid .key_card.card_white h4{
+  color: #B1B1B1;
+}
+
+.key_cards_grid .key_card h4{
   font-size: 24px;
   line-height: 32px;
   font-family: var(--manrope);
@@ -1281,6 +1304,39 @@ ul.list_with_icon li .list_content h4.text_blue {
   width: 100%;
 }
 
+.service_hero_section .services_hero_img{
+  width: 100%;
+  max-width: 784px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul.icon_with_text{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap:40px 30px;
+}
+
+ul.icon_with_text li{
+  width: calc(25% - 22.5px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+ul.icon_with_text li img{
+  width: 80px;
+  aspect-ratio: 1/1;
+}
+
+.service_overview .container{
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
 
 @media screen and (max-width: 1600px) {
   .about_overview .section_heading_wrapper.left_align {
@@ -1356,6 +1412,9 @@ ul.list_with_icon li .list_content h4.text_blue {
 }
 
 @media screen and (max-width: 1300px) {
+  .service_overview .container{
+    gap: 40px;
+  }
   .about_overview .right_content {
     width: 50%;
   }
@@ -1376,6 +1435,13 @@ ul.list_with_icon li .list_content h4.text_blue {
 }
 
 @media screen and (max-width: 1024px) {
+  .key_cards_grid .key_card_icon{
+  width: 70px;
+}
+
+  .key_cards_grid.key_cards_grid_4 .key_card {
+    width: calc(50% - 12px);
+}
 
   .team_section .content_area .team_card .content h4{
     font-size: 20px;
@@ -1407,16 +1473,21 @@ ul.list_with_icon li .list_content h4.text_blue {
   .key_features .content_area{
     gap: 30px;
   }
-  .key_features .content_area .content {
+
+  .key_cards_grid {
     flex-direction: column;
     gap: 24px;
   }
-  .key_features .content_area .content .key_card{
+    .key_cards_grid.key_cards_grid_4{
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+.key_cards_grid  .key_card{
     width: 100%;
     gap: 16px;
   }
 
-  .key_features .content_area .content .key_card h4{
+.key_cards_grid  .key_card h4{
     font-size: 20px;
     line-height: 28px;
   }
@@ -1424,6 +1495,20 @@ ul.list_with_icon li .list_content h4.text_blue {
   ul.list_with_icon.grid {
     flex-flow: wrap;
     gap: 30px;
+}
+
+ul.list_with_icon li .list_content,
+ul.icon_with_text li,
+ul.list_with_icon.grid li{
+  gap: 16px;
+}
+
+ul.icon_with_text li img {
+    width: 60px;
+}
+
+ul.icon_with_text{
+  gap: 30px;
 }
 
   .pioticon_model .bg_circle .circle_stroke.left {
@@ -1658,7 +1743,7 @@ ul.list_with_icon li .list_content h4.text_blue {
   .common_section {
     padding: 80px 0;
   }
-  .hero_section {
+  .hero_section.inner_page  {
     padding-top: 120px;
   }
   footer {
@@ -1675,6 +1760,18 @@ ul.list_with_icon li .list_content h4.text_blue {
 }
 
 @media screen and (max-width: 767px) {
+
+    .key_cards_grid .key_card_icon{
+  width: 50px;
+}
+
+    .key_cards_grid.key_cards_grid_4 .key_card {
+    width: 100%;
+}
+
+  ul.icon_with_text li{
+    width: calc(50% - 15px);
+  }
   .team_section .content_area .team_card{
     width: 100%;
   }
@@ -1889,7 +1986,7 @@ ul.list_with_icon.grid li{
   .common_section {
     padding: 50px 0;
   }
-  .hero_section {
+  .hero_section.inner_page  {
     padding-top: 120px;
   }
   footer {
