@@ -282,7 +282,7 @@ export default function page() {
 <div className='container'>
     <div className='section_heading_wrapper make_center' data-aos="fade-up">
       <h3 className='sub_heading white_text'>Testimonials</h3>
-      <h2 className='main_heading white_text'>Client Narratives Validate Our <span>Structural Governance Model.</span></h2>
+      <h2 className='main_heading white_text'>Client Narratives Validate Our Structural <span>Governance Model.</span></h2>
     </div>
 
 <div className='content_area'>
