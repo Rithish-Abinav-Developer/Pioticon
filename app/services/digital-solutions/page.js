@@ -25,30 +25,34 @@ useEffect(() => {
     const cards = gsap.utils.toArray(".stack_card");
     if (!cards.length) return;
 
-    const offsetGap = 5;
+    const offsetGap = 10;
     const scaleStep = 0.025;
     const total = cards.length;
     const lastCard = cards[total - 1];
 
+      const mm = gsap.matchMedia();
+
     // ================= STACK CARDS =================
-    cards.forEach((card, i) => {
-      gsap.to(card, {
-        scale: 1 - (total - i - 1) * scaleStep,
-        opacity: 1 - (total - i - 1) * scaleStep,
-        y: i * offsetGap,
-        transformOrigin: "center top",
-        ease: "none",
-        scrollTrigger: {
-          trigger: card,
-          start: `center center+=${i * offsetGap}`,
-          endTrigger: lastCard,
-          end: `center center+=${10 * offsetGap}`,
-          scrub: true,
-          pin: true,
-          pinSpacing: false, 
-          anticipatePin: 1,
-        //   markers: true,
-        },
+    mm.add("(min-width: 1024px)", () => {
+      cards.forEach((card, i) => {
+        gsap.to(card, {
+          scale: 1 - (total - i - 1) * scaleStep,
+          opacity: 1 - (total - i - 1) * scaleStep,
+          y: i * offsetGap,
+          transformOrigin: "center top",
+          ease: "none",
+          scrollTrigger: {
+            trigger: card,
+            start: `center center+=${(i+2) * offsetGap}`,
+            endTrigger: lastCard,
+            end: `center center+=${4 * offsetGap}`,
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+            anticipatePin: 1,
+            // markers: true,
+          },
+        });
       });
     });
 

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Stack3() {
   return (
-   <svg xmlns="http://www.w3.org/2000/svg" width="651" height="573" viewBox="0 0 651 573" fill="none">
+   <svg xmlns="http://www.w3.org/2000/svg" width="" height="" viewBox="0 0 651 573" fill="none">
 <g clipPath="url(#clip0_180_1850)">
 <path style={{ mixBlendMode: "multiply" }} d="M563.623 344.898L483.775 298.815L404.423 344.61L404.645 344.741L326.026 390.118L325.581 389.857L246.491 435.509L246.452 435.483L167.1 481.265L167.126 481.278L88.0361 526.917L167.885 573L247.236 527.204L247.21 527.191L326.052 481.709L326.078 481.723L404.894 436.254L405.325 436.502L484.677 390.72L484.441 390.589L563.623 344.898Z" fill="url(#paint0_linear_180_1850)"/>
 <g style={{ mixBlendMode: "multiply" }} filter="url(#filter0_f_180_1850)">

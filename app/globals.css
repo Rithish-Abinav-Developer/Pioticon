@@ -554,6 +554,12 @@ footer .main_heading span span {
   flex-direction: column;
   justify-content: flex-end;
   gap: 24px;
+  transition: 0.3s all;
+}
+
+.core_values .content_area ._card:hover{
+  transform: scale(0.99);
+  background-color: #efefef;
 }
 
 .core_values .content_area ._card img{
@@ -1405,7 +1411,7 @@ ul.icon_with_text li img{
  max-width: 962px;
 }
 
-.implementation_approach .content_area{
+.implementation_approach .container .content_area{
 margin-top: 80px;
 display: flex;
 flex-direction: column;
@@ -1620,6 +1626,24 @@ opacity: 0.3;
 }
 
 @media screen and (max-width: 1024px) {
+  .implementation_approach .container .content_area{
+    margin-top: 50px;
+  }
+
+  .stack_card{
+    padding: 24px;
+  }
+  .stack_card .content h3 {
+    font-size: 24px;
+    line-height: 32px;
+}
+.stack_card .content ul li {
+    font-size: 18px;
+    line-height: 26px;
+}
+.stack_card .content, .stack_card .content ul {
+    gap: 16px;
+}
     .core_values .content_area ._card img{
     width: 60px;
   }
@@ -1975,6 +1999,25 @@ ul.icon_with_text{
 }
 
 @media screen and (max-width: 767px) {
+
+    .core_values .content_area ._card img{
+    width: 100px;
+  }
+
+      .stack_card .content h3 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+  .stack_card{
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .stack_card .content, .stack_card .image{
+    width: 100%;
+  }
 
     .key_cards_grid .key_card_icon{
   width: 50px;
