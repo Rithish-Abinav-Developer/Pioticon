@@ -435,8 +435,8 @@ footer .main_heading span span {
   transform: translate(-50%, -50%) rotate(-45deg);
   opacity: 0.2;
   background: #388dcb;
-
   filter: blur(302px);
+  --webkit-filter: blur(302px);
 }
 
 .who_we_are .content_area {
@@ -503,6 +503,7 @@ footer .main_heading span span {
   transform: rotate(45deg) translateX(-42%) translateY(-20%);
   border-radius: 100%;
   filter: blur(302px);
+  --webkit-filter: blur(302px);
   opacity: 0.2;
   animation: layer_circle_before 10s infinite alternate linear;
 }
@@ -601,6 +602,7 @@ footer .main_heading span span {
   z-index: 1;
   opacity: 0.3;
   filter: blur(300px);
+  --webkit-filter: blur(300px);
   border-radius: 100%;
   transform: rotate(-45deg);
 }
@@ -722,6 +724,7 @@ footer .main_heading span span {
   left: 0%;
   transform: translate(-40%, -40%) rotate(-45deg);
   filter: blur(100px);
+  --webkit-filter: blur(100px);
 }
 
 .testimonial_slider .swiper-slide::after {
@@ -1438,6 +1441,7 @@ gap: 30px;
  aspect-ratio: 1245 / 1038;
 border-radius: 100%;
 opacity: 0.3;
+display: block;
 }
 
 .stack_card:before {
@@ -1446,13 +1450,15 @@ opacity: 0.3;
     transform: rotate(45deg) translate(-50%, -50%);
     background-color: #E799FF;
     filter: blur(200px);
+    --webkit-filter: blur(200px);
 }
 
 .stack_card::after{
  right: -5%;
- top: 5;
+ top: 5%;
     background-color: #388DCB;
     filter: blur(200px);
+    --webkit-filter: blur(200px);
 }
 
 .stack_card .content,
@@ -2211,6 +2217,7 @@ ul.list_with_icon.grid li{
   .dark_bg_with_layer:before,
   .dark_bg_with_layer:after {
     filter: blur(80px);
+    --webkit-filter: blur(80px);
     width: 400px;
   }
   .core_values .content_area {
