@@ -1,3 +1,7 @@
+import ClientsBG from '@/app/Components/ClientsBG'
+import Footer from '@/app/Components/Footer'
+import HomepageIndustrySlider from '@/app/Components/HomepageIndustrySlider '
+import HomepageITestimonialSlider from '@/app/Components/HomepageITestimonialSlider'
 import Link from 'next/link'
 import React from 'react'
 
@@ -129,11 +133,6 @@ export default function page() {
   </div>
 </section>
 
-
-
-
-
-
 <section className='common_section key_features dark_bg_with_layer'>
 
 
@@ -181,6 +180,184 @@ export default function page() {
 </div>
 
 </section>
+
+
+<section className='common_section mis_vis methodology'>
+  <div className='container'>
+    <div className='section_heading_wrapper left_align' data-aos="fade-up">
+      <h3 className='sub_heading'>Our Mission, Vision and Purpose</h3>
+      <h2 className='main_heading'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+    </div>
+
+    <div className='content_area'>
+  <div className='image' data-aos="fade-right">
+    <img src='/images/piotocon_methodology.svg' alt='piotocon_methodology' width='100%' />
+  </div>
+  <div className='content' data-aos="fade-left">
+    <ul className='list_with_icon'>
+<li>
+     <img className='list_icon' src='/images/vision.svg' alt='about_mis_vis' />
+     <div className='list_content'>
+        <h4 className='list_title text_yellow'>First principle thinking </h4>
+        <p className='text'>Focus on first principle thinking to solve problems. </p>
+     </div>
+</li>
+
+<li>
+     <img className='list_icon' src='/images/mission.svg' alt='about_mis_vis' />
+     <div className='list_content'>
+        <h4 className='list_title text_green'>PDCA process</h4>
+        <p className='text'>Seamlessly integrate the macro and micro levels, utilizing an efficient plan-do-check-act process.</p>
+     </div>
+</li>
+
+<li>
+     <img className='list_icon' src='/images/purpose.svg' alt='about_mis_vis' />
+     <div className='list_content'>
+        <h4 className='list_title text_blue' >Top-down+Bottom-up technique</h4>
+        <p className='text'>Granular breaking down of project levels, enabling top-down planning, monitoring, and control, as well as extraction of critical and meaningful insights from the bottom-up level to enable accuracy.</p>
+     </div>
+</li>
+
+<li>
+     <img className='list_icon' src='/images/purpose.svg' alt='about_mis_vis' />
+     <div className='list_content'>
+        <h4 className='list_title text_blue' >An integrated approach </h4>
+        <p className='text'>Thoroughly understanding project scope and complexity and adopting an integrated approach to implement functional processes and systems that align with the project objectives.</p>
+     </div>
+</li>
+
+    </ul>
+  </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section className='common_section key_features dark_bg_with_layer'>
+
+
+<div className='container'>
+    <div className='section_heading_wrapper' data-aos="fade-up">
+      <h3 className='sub_heading white_text'>Pi System</h3>
+      <h2 className='main_heading white_text'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+      <p className='text white_text'>At PIOTICON, our commitment to continuous improvement is evident through our integrated performance improvement system, known as the Pi system. Our teams, comprised of trained professionals, possess deep subject matter knowledge, excel in expert execution, and consistently deliver value-added outcomes.</p>
+    </div>
+
+<div className='content_area'>
+<div className='image' data-aos="fade-up">
+  <img src='/images/pi_system.svg' alt='pi_system' width="100%" />
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<section className='common_section industries_section left_padding_section'>
+
+<div className='container'>
+    <div className='section_heading_wrapper make_center' data-aos="fade-up">
+      <h3 className='sub_heading'>Industries We Serves</h3>
+      <h2 className='main_heading'>Integrated Governance Across All Complex <span>Project Ecosystems.</span></h2>
+      <p className='text'>We specialize in high-complexity capital programs for infrastructure (rail, bridges, roads), energy, and mining. Our structural PMC eliminates operational fragility and governance gaps inherent in these ecosystems.</p>
+    </div>
+
+<div className='content_area'>
+<HomepageIndustrySlider color={'black'}/>
+</div>
+
+</div>
+
+</section>
+
+
+<section className='common_section testimonial dark_bg_with_layer left_padding_section'>
+
+<div className='container'>
+    <div className='section_heading_wrapper make_center' data-aos="fade-up">
+      <h3 className='sub_heading white_text'>Testimonials</h3>
+      <h2 className='main_heading white_text'>Client Narratives Validate Our <span>Structural Governance Model.</span></h2>
+    </div>
+
+<div className='content_area'>
+<HomepageITestimonialSlider/>
+</div>
+
+</div>
+
+</section>
+
+
+<section className='common_section  clients_section'>
+
+<div className='container'>
+    <div className='section_heading_wrapper' data-aos="fade-up">
+      <h3 className='sub_heading '>Our Clients</h3>
+      <h2 className='main_heading '>Structural PMC Validated by <span>Global Mega-projects.</span></h2>
+            <Link href='#' className='common_btn'><span>Enquire Now <img src='/images/arrow-right.svg' alt='logo' /></span> </Link>
+
+    </div>
+
+<div className='content_area'>
+<div className='row'>
+  <div className='card' data-aos="slide-up">
+    <img src='/images/c1.png' alt='clients' />
+  </div>
+    <div className='card' data-aos="slide-up">
+    <img src='/images/c2.png' alt='clients' />
+  </div>
+    <div className='card' data-aos="slide-up">
+    <img src='/images/c3.png' alt='clients' />
+  </div>
+  
+</div>
+
+<div className='row'>
+  <div className='card' data-aos="slide-up">
+    <img src='/images/c4.png' alt='clients' />
+  </div>
+    <div className='card' data-aos="slide-up">
+    <img src='/images/c5.png' alt='clients' />
+  </div>
+    <div className='card' data-aos="slide-up">
+    <img src='/images/c6.png' alt='clients' />
+  </div>
+     <div className='card' data-aos="slide-up">
+    <img src='/images/c1.png' alt='clients' />
+  </div>
+  
+</div>
+
+
+<div className='row'>
+      <div className='card invisible' data-aos="slide-up">
+    <img src='/images/c6.png' alt='clients' />
+  </div>
+  <div className='card' data-aos="slide-up">
+    <img src='/images/c6.png' alt='clients' />
+  </div>
+    <div className='card' data-aos="slide-up">
+    <img src='/images/c2.png' alt='clients' />
+  </div>
+
+
+  
+</div>
+
+</div>
+
+</div>
+
+<ClientsBG/>
+
+</section>
+
+<Footer/>
     
     </>
   )

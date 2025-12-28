@@ -9,12 +9,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
 
-export default function HomepageIndustrySlider() {
+export default function HomepageIndustrySlider({color}) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
   return (
-    <Swiper className="white_pagination center_pagination industry_slider" data-aos="fade-up"
+    <Swiper className={`center_pagination industry_slider ${color === 'black' ?"": 'white_pagination' }`} data-aos="fade-up"
       modules={[Navigation, Pagination, Autoplay]}
       slidesPerView={3.65}
       spaceBetween={30}
@@ -56,11 +56,11 @@ export default function HomepageIndustrySlider() {
       }}
     >
       {/* Navigation Buttons */}
-      <div ref={prevRef} className="custom-prev">
+      <div ref={prevRef} className={`custom-prev ${color === 'black' ? 'black' : ''}`}>
         <img src="/images/slider-prev.svg" alt="prev" />
       </div>
 
-      <div ref={nextRef} className="custom-next">
+      <div ref={nextRef} className={`custom-next ${color === 'black' ? 'black' : 'white_btn'}`}>
         <img src="/images/slider-next.svg" alt="next" />
       </div>
 
@@ -69,41 +69,41 @@ export default function HomepageIndustrySlider() {
         <div className="image">
           <img src="/images/construction.png" width='100%'></img>
         </div>
-        <p className="text white_text">Construction </p>
+        <p className={`text ${color === 'black' ? 'black_text' : 'white_text'}`}>Construction </p>
       </SwiperSlide>
 
           <SwiperSlide>
         <div className="image">
           <img src="/images/construction.png" width='100%'></img>
         </div>
-        <p className="text white_text">Construction </p>
+        <p className={`text ${color === 'black' ? 'black_text' : 'white_text'}`}>Construction </p>
       </SwiperSlide>
 
            <SwiperSlide>
         <div className="image">
           <img src="/images/construction.png" width='100%'></img>
         </div>
-        <p className="text white_text">Construction </p>
+        <p className={`text ${color === 'black' ? 'black_text' : 'white_text'}`}>Construction </p>
       </SwiperSlide>
        <SwiperSlide>
         <div className="image">
           <img src="/images/construction.png" width='100%'></img>
         </div>
-        <p className="text white_text">Construction </p>
+        <p className={`text ${color === 'black' ? 'black_text' : 'white_text'}`}>Construction </p>
       </SwiperSlide>
 
           <SwiperSlide>
         <div className="image">
           <img src="/images/construction.png" width='100%'></img>
         </div>
-        <p className="text white_text">Construction </p>
+        <p className={`text ${color === 'black' ? 'black_text' : 'white_text'}`}>Construction </p>
       </SwiperSlide>
 
            <SwiperSlide>
         <div className="image">
           <img src="/images/construction.png" width='100%'></img>
         </div>
-        <p className="text white_text">Construction </p>
+        <p className={`text ${color === 'black' ? 'black_text' : 'white_text'}`}>Construction </p>
       </SwiperSlide>
     </Swiper>
   );

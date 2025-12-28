@@ -92,14 +92,17 @@ export default function page() {
 
 <div className='content_area'>
   <div className='_card' data-aos="fade-up">
+    <img src='/images/integrity.svg' alt='' />
     <h3>Integrity Above All</h3>
     <p className='text'>Conducting ourselves with honesty, transparency, and ethics.</p>
   </div>
     <div className='_card' data-aos="fade-up" data-aos-delay="200">
+    <img src='/images/unyielding.svg' alt='' />
     <h3>Unyielding Courage</h3>
     <p className='text'>Being courageous and choosing what’s right in every situation, learning from our mistakes, and achieving truly transformative success.</p>
   </div>
     <div className='_card' data-aos="fade-up" data-aos-delay="400">
+    <img src='/images/enduring.svg' alt='' />
     <h3>Enduring Excellence</h3>
     <p className='text'>Prioritizing excellence by constantly improving our processes and practices to deliver the highest quality results for our clients and achieve exceptional long-term outcomes.</p>
   </div>
@@ -212,7 +215,7 @@ export default function page() {
 
 
 
-<section className='common_section  dark_bg_with_layer left_padding_section'>
+<section className='common_section testimonial dark_bg_with_layer left_padding_section'>
 
 <div className='container'>
     <div className='section_heading_wrapper make_center' data-aos="fade-up">

@@ -32,7 +32,7 @@ export default function HomepageHeroBanner() {
       <div className="container">
         <h1 data-aos="fade-up">Inspire <br className="desktop_break"></br>Productivity</h1>
 
-        <Swiper className="white_pagination" data-aos="fade-up"
+        <Swiper className="white_pagination"
           modules={[Navigation, Pagination, Autoplay]}
           slidesPerView={1}
           spaceBetween={20}
