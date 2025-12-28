@@ -10,128 +10,120 @@ import HomepageIndustrySlider from '@/app/Components/HomepageIndustrySlider ';
 import HomepageITestimonialSlider from '@/app/Components/HomepageITestimonialSlider';
 import ClientsBG from '@/app/Components/ClientsBG';
 import Footer from '@/app/Components/Footer';
+import AnimatedHeading from '@/app/Components/AnimatedHeading';
+
+
 
 export default function page() {
+
 useEffect(() => {
   if (typeof window === "undefined") return;
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // 🔴 kill old triggers (important for Next.js)
-  ScrollTrigger.getAll().forEach(t => t.kill());
+  const ctx = gsap.context(() => {
+    const cards = gsap.utils.toArray(".stack_card");
+    if (!cards.length) return;
 
-  const cards = gsap.utils.toArray(".stack_card");
-  if (!cards.length) return;
+    const offsetGap = 5;
+    const scaleStep = 0.025;
+    const total = cards.length;
+    const lastCard = cards[total - 1];
 
-  const offsetGap = 10;
-  const scaleStep = 0.025;
-  const total = cards.length;
-  const lastCard = cards[total - 1];
+    // ================= STACK CARDS =================
+    cards.forEach((card, i) => {
+      gsap.to(card, {
+        scale: 1 - (total - i - 1) * scaleStep,
+        opacity: 1 - (total - i - 1) * scaleStep,
+        y: i * offsetGap,
+        transformOrigin: "center top",
+        ease: "none",
+        scrollTrigger: {
+          trigger: card,
+          start: `center center+=${i * offsetGap}`,
+          endTrigger: lastCard,
+          end: `center center+=${10 * offsetGap}`,
+          scrub: true,
+          pin: true,
+          pinSpacing: false, 
+          anticipatePin: 1,
+        //   markers: true,
+        },
+      });
+    });
 
-  // ================= STACK CARDS =================
-  cards.forEach((card, i) => {
-    gsap.to(card, {
-      scale: 1 - (total - i - 1) * scaleStep,
-      opacity: 1 - (total - i - 1) * scaleStep,
-      y: i * offsetGap,
-      transformOrigin: "center top",
-      ease: "none",
-      scrollTrigger: {
-        trigger: card,
-        start: `center center+=${i * offsetGap}`,
-        endTrigger: lastCard,
-        end: `center center+=${2 * offsetGap}`,
-        scrub: true,
-        pin: true,
-        pinSpacing: false,
-        anticipatePin: 1,
+    // ================= SVG TRIGGERS =================
+    ScrollTrigger.create({
+      trigger: cards[0],
+      start: "top 80%",
+      once: true,
+      onEnter: () => {
+        cards.forEach(card => card.classList.add("active"));
+
+        const stack1Paths = document.querySelectorAll(
+          ".stack_card1 path:not(#line)"
+        );
+        const stack3Paths = document.querySelectorAll(
+          ".stack_card3 path"
+        );
+        const line = document.querySelector(".stack_card1 #line");
+
+        // Stack 1 fade-in
+        gsap.fromTo(
+          stack1Paths,
+          { opacity: 0 },
+          {
+            opacity: 1,
+            duration: 0.01,
+            stagger: 0.01,
+            ease: "power1.out",
+          }
+        );
+
+        // Stack 3 scroll fade
+        gsap.fromTo(
+          stack3Paths,
+          { opacity: 0 },
+          {
+            opacity: 1,
+            stagger: 0.1,
+            ease: "power1.out",
+            scrollTrigger: {
+              trigger: ".stack_card3",
+              start: "center 80%",
+              end: "center center",
+              scrub: true,
+            },
+          }
+        );
+
+        // Line draw
+        if (line) {
+          const length = line.getTotalLength();
+          line.style.strokeDasharray = length;
+          line.style.strokeDashoffset = length;
+
+          gsap.to(line, {
+            strokeDashoffset: 0,
+            duration: 4,
+            ease: "power1.out",
+          });
+        }
       },
     });
+
+    ScrollTrigger.refresh();
   });
 
-  // ================= SVG ANIMATION TRIGGER =================
-  ScrollTrigger.create({
-    trigger: cards[0],
-    start: "top bottom",
-    once: true,
-    onEnter: () => {
-      cards.forEach(card => card.classList.add("active"));
-
-      const stack1Paths = document.querySelectorAll(
-        ".stack_card.stack_card1.active path:not(#line)"
-      );
-
-      const stack3Paths = document.querySelectorAll(
-        ".stack_card.stack_card3.active path"
-      );
-
-      const line = document.querySelector(
-        ".stack_card.stack_card1.active #line"
-      );
-
-      // 🔹 Stack 1 fade-in
-      gsap.fromTo(
-        stack1Paths,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          duration: 0.01,
-          stagger: 0.01,
-          ease: "power1.out",
-        }
-      );
-
-      // 🔹 Stack 3 scroll-based fade-in
-      gsap.fromTo(
-        stack3Paths,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          stagger: 0.1,
-          ease: "power1.out",
-          scrollTrigger: {
-            trigger: ".stack_card.stack_card3.active",
-            start: "center 80%",
-            end: "center center",
-            scrub: true,
-          },
-        }
-      );
-
-      // 🔹 Line draw animation
-      if (line) {
-        const length = line.getTotalLength();
-        line.style.strokeDasharray = length;
-        line.style.strokeDashoffset = length;
-
-        gsap.to(line, {
-          strokeDashoffset: 0,
-          duration: 4,
-          delay: 0.5,
-          ease: "power1.out",
-          once: true,
-        });
-      }
-    },
-  });
-
-  // 🔴 refresh after layout settles
-  ScrollTrigger.refresh();
-
-  return () => {
-    ScrollTrigger.getAll().forEach(t => t.kill());
-  };
+  return () => ctx.revert();
 }, []);
-
-
-
-
 
 
 
 
   return (
    <>
+   <AnimatedHeading/>
         <section className='common_section core_values dark_bg_with_layer hero_section inner_page service_hero_section about_hero_section'>
 
 <div className='container'>

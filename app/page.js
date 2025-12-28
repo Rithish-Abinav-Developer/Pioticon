@@ -10,6 +10,7 @@ import ClientsBG from './Components/ClientsBG';
 import HomepageITestimonialSlider from './Components/HomepageITestimonialSlider';
 import HomepageBlogSlider from './Components/HomepageBlogSlider';
 import Footer from './Components/Footer';
+import AnimatedHeading from './Components/AnimatedHeading';
 
 export default function page() {
 
@@ -22,7 +23,7 @@ export default function page() {
   return (
    <>
    <HomepageHeroBanner />
-
+  <AnimatedHeading/>
 <section className='common_section who_we_are'>
   <div className='container'>
     <div className='section_heading_wrapper left_align' data-aos="fade-up">

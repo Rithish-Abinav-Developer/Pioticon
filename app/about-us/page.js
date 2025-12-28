@@ -8,6 +8,7 @@ import AnimatedHeading from '../Components/AnimatedHeading'
 export default function AboutUs() {
   return (
     <>
+      <AnimatedHeading/>
     <section className='common_section core_values dark_bg_with_layer hero_section inner_page about_hero_section'>
 
 <div className='container'>
