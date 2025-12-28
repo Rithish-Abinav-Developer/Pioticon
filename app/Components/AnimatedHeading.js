@@ -6,36 +6,65 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 export default function AnimatedHeading() {
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     gsap.registerPlugin(ScrollTrigger);
 
-    const mobile = window.innerWidth <= 500;
+    // 🔴 Kill old triggers (important in Next.js)
+    ScrollTrigger.getAll().forEach(t => t.kill());
 
-    document.querySelectorAll(".main_heading").forEach((heading) => {
-        // console.log(heading)
-      const span = heading.querySelector("span");
-      const text = span.innerText;
-      span.innerHTML = ""; 
+    const mm = gsap.matchMedia();
 
-      // Split letters
-      text.split("").forEach((letter) => {
-        const letterSpan = document.createElement("span");
-        letterSpan.innerText = letter;
-        span.appendChild(letterSpan);
-      });
+    mm.add(
+      {
+        isMobile: "(max-width: 500px)",
+        isDesktop: "(min-width: 501px)",
+      },
+      (context) => {
+        const { isMobile } = context.conditions;
 
-      // GSAP animation
-      gsap.to(span.querySelectorAll("span"), {
-        scrollTrigger: {
-          trigger: heading.querySelector("span"),
-          start: `top ${mobile ? "90%" : "80%"}`,
-          end: `top ${mobile ? "70%" : "60%"}`,
-          scrub: 1,
-        },
-        opacity: 1,
-        stagger: 0.1,
-      });
-    });
+        document.querySelectorAll(".main_heading").forEach((heading) => {
+          const span = heading.querySelector("span");
+          if (!span) return;
+
+          // 🔴 Prevent double-splitting
+          if (span.dataset.split === "true") return;
+          span.dataset.split = "true";
+
+          const text = span.innerText;
+          span.innerHTML = "";
+
+          // Split letters
+          text.split("").forEach((letter) => {
+            const letterSpan = document.createElement("span");
+            letterSpan.textContent = letter === " " ? "\u00A0" : letter;
+            letterSpan.style.opacity = 0;
+            span.appendChild(letterSpan);
+          });
+
+          // Animation
+          gsap.to(span.querySelectorAll("span"), {
+            scrollTrigger: {
+              trigger: span,
+              start: `top ${isMobile ? "90%" : "80%"}`,
+              end: `top ${isMobile ? "70%" : "60%"}`,
+              scrub: 1,
+            },
+            opacity: 1,
+            stagger: 0.1,
+            ease: "power1.out",
+          });
+        });
+      }
+    );
+
+    ScrollTrigger.refresh();
+
+    return () => {
+      mm.revert();
+      ScrollTrigger.getAll().forEach(t => t.kill());
+    };
   }, []);
 
-  return null; // This component only runs the animation setup
+  return null;
 }
