@@ -3,11 +3,10 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useRouter } from "next/navigation"; // App Router
+import { usePathname } from "next/navigation"; 
 
 export default function AnimatedHeading() {
-
-  const router = useRouter();
+  const pathname = usePathname(); 
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -26,14 +25,12 @@ export default function AnimatedHeading() {
           const { isMobile } = context.conditions;
 
           document.querySelectorAll(".main_heading span").forEach((span) => {
-            // ✅ Store original text (only once)
             if (!span.dataset.originalText) {
               span.dataset.originalText = span.textContent;
             }
 
             const text = span.dataset.originalText;
 
-            // ✅ Reset DOM every time
             span.innerHTML = "";
 
             [...text].forEach((char) => {
@@ -59,12 +56,11 @@ export default function AnimatedHeading() {
       );
     });
 
-    return () => ctx.revert(); // 🔥 cleans ONLY this component
-  }, []);
-
-  useEffect(() => {
-  ScrollTrigger.refresh();
-}, [router.asPath]);
+    return () => {
+      ctx.revert(); 
+      ScrollTrigger.refresh();
+    };
+  }, [pathname]);
 
   return null;
 }
