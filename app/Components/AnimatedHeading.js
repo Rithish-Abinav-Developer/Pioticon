@@ -13,53 +13,58 @@ export default function AnimatedHeading() {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const ctx = gsap.context(() => {
-      const mm = gsap.matchMedia();
+    // delay execution by 500ms
+    const timeoutId = setTimeout(() => {
+      const ctx = gsap.context(() => {
+        const mm = gsap.matchMedia();
 
-      mm.add(
-        {
-          isMobile: "(max-width: 500px)",
-          isDesktop: "(min-width: 501px)",
-        },
-        (context) => {
-          const { isMobile } = context.conditions;
+        mm.add(
+          {
+            isMobile: "(max-width: 500px)",
+            isDesktop: "(min-width: 501px)",
+          },
+          (context) => {
+            const { isMobile } = context.conditions;
 
-          document.querySelectorAll(".main_heading span").forEach((span) => {
-            if (!span.dataset.originalText) {
-              span.dataset.originalText = span.textContent;
-            }
+            document.querySelectorAll(".main_heading span").forEach((span) => {
+              if (!span.dataset.originalText) {
+                span.dataset.originalText = span.textContent;
+              }
 
-            const text = span.dataset.originalText;
+              const text = span.dataset.originalText;
 
-            span.innerHTML = "";
+              // reset innerHTML
+              span.innerHTML = "";
 
-            [...text].forEach((char) => {
-              const letter = document.createElement("span");
-              letter.textContent = char === " " ? "\u00A0" : char;
-              letter.style.opacity = 0;
-              span.appendChild(letter);
+              [...text].forEach((char) => {
+                const letter = document.createElement("span");
+                letter.textContent = char === " " ? "\u00A0" : char;
+                letter.style.opacity = 0;
+                span.appendChild(letter);
+              });
+
+              gsap.to(span.children, {
+                opacity: 1,
+                stagger: 0.08,
+                ease: "power1.out",
+                scrollTrigger: {
+                  trigger: span,
+                  start: `top ${isMobile ? "90%" : "80%"}`,
+                  end: `top ${isMobile ? "70%" : "60%"}`,
+                  scrub: 1,
+                },
+              });
             });
+          }
+        );
+      });
 
-            gsap.to(span.children, {
-              opacity: 1,
-              stagger: 0.08,
-              ease: "power1.out",
-              scrollTrigger: {
-                trigger: span,
-                start: `top ${isMobile ? "90%" : "80%"}`,
-                end: `top ${isMobile ? "70%" : "60%"}`,
-                scrub: 1,
-              },
-            });
-          });
-        }
-      );
-    });
+      // cleanup
+      return () => ctx.revert();
+    }, 500);
 
-    return () => {
-      ctx.revert(); 
-      ScrollTrigger.refresh();
-    };
+    // clear timeout on unmount
+    return () => clearTimeout(timeoutId);
   }, [pathname]);
 
   return null;
