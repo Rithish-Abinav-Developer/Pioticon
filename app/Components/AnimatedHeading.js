@@ -3,8 +3,12 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRouter } from "next/navigation"; // App Router
 
 export default function AnimatedHeading() {
+
+  const router = useRouter();
+
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -57,6 +61,10 @@ export default function AnimatedHeading() {
 
     return () => ctx.revert(); // 🔥 cleans ONLY this component
   }, []);
+
+  useEffect(() => {
+  ScrollTrigger.refresh();
+}, [router.asPath]);
 
   return null;
 }
