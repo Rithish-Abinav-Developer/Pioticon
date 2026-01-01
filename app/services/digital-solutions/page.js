@@ -22,6 +22,7 @@ useEffect(() => {
   gsap.registerPlugin(ScrollTrigger);
 
   const ctx = gsap.context(() => {
+     requestAnimationFrame(() => {
     const cards = gsap.utils.toArray(".stack_card");
     if (!cards.length) return;
 
@@ -117,6 +118,7 @@ useEffect(() => {
     });
 
     ScrollTrigger.refresh();
+  });
   });
 
   return () => ctx.revert();
