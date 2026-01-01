@@ -23,7 +23,7 @@ export default function page() {
   return (
    <>
    <HomepageHeroBanner />
-  <AnimatedHeading/>
+
 <section className='common_section who_we_are'>
   <div className='container'>
     <div className='section_heading_wrapper left_align' data-aos="fade-up">
@@ -251,7 +251,7 @@ export default function page() {
 </section>
 
 <Footer/>
-
+  <AnimatedHeading/>
    </>
   )
 }

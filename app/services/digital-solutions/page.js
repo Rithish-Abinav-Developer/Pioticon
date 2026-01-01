@@ -129,7 +129,7 @@ useEffect(() => {
 
   return (
    <>
-   <AnimatedHeading/>
+ 
         <section className='common_section core_values dark_bg_with_layer hero_section inner_page service_hero_section about_hero_section'>
 
 <div className='container'>
@@ -391,6 +391,7 @@ useEffect(() => {
 
 <Footer/>
    
+     <AnimatedHeading/>
    </>
   )
 }

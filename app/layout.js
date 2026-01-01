@@ -21,7 +21,6 @@ export default function RootLayout({ children }) {
       <body className={manrope.className}>
         <AOSProvider>
           <Header />
-        
           {children}
         </AOSProvider>
 
