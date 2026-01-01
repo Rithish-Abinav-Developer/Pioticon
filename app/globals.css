@@ -30,6 +30,8 @@ html {
   --green: #469a45;
   --clashDisplay: "ClashDisplay-Variable";
   --manrope: "Manrope", sans-serif;
+  --design-width: 1920px;
+  --clientScale: calc(100vw / var(--design-width));
 }
 
 body {
@@ -151,6 +153,27 @@ header {
   width: 100%;
   z-index: 999;
 }
+
+header.fixed_header {
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  animation: fixed_header 0.5s forwards ease-in-out;
+}
+
+@keyframes fixed_header {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
 
 header .container,
 header .container nav ul {
@@ -1509,13 +1532,151 @@ display: block;
     background-size: cover;
 }
 
-#client_vector path{
- margin-top: -110px;
- margin-bottom: -2px;
+
+.design-wrapper {
+  transform-origin: bottom left;
+  transform: scale(var(--clientScale));
+    width: 1920px;
+  height: 454px;
+  aspect-ratio: 1920 / 454;
+  overflow: hidden;
+  margin-top: -110px;
 }
 
 
+
+#client_vector {
+  position: relative;
+
+}
+
+
+
+
+.wheel {
+    z-index: 2;
+    width: 360px;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    opacity: 0.35;
+    animation: wheel 30s infinite linear;
+}
+@keyframes wheel {
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.windmill{
+  z-index: 2;
+  position: absolute;
+  animation: wheel 30s infinite linear;
+}
+
+.windmill_1{
+  width: 185px;
+  top: 3.5%;
+  right: 2.5%;
+  opacity: 0.35;
+}
+
+.windmill_2{
+  width: 115px;
+  top: 17%;
+  right: 9.5%;
+  opacity: 0.35;
+  animation-delay: 5;
+  animation-duration: 20s;
+}
+
+.bridge_front{
+  position: absolute;
+  left: 0;
+  bottom: 110px;
+  z-index: 3;
+}
+
+.bridge_wall_front {
+    z-index: 10;
+    width: 725.167px;
+    position: absolute;
+    top: 42.5%;
+    left: 43.2%;
+}
+
+.train{
+  position: absolute;
+  width: 1106.87px;
+  left: 120%;
+  top: 55%;
+  animation: train 10s infinite linear;
+  z-index: 8;
+}
+@keyframes train {
+  to{
+    transform: translateX(-320%);
+  }
+}
+
+.key_features.pmc_key_features .section_heading_wrapper + .content_area .anim{
+  opacity: 0;
+}
+
+.key_features.pmc_key_features  .section_heading_wrapper.aos-init.aos-animate + .content_area .anim{
+    animation: animations 0.1s alternate linear forwards;
+      animation-delay: calc(var(--i) * 1s);
+}
+
+@keyframes animations {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+.key_features.pmc_key_features  .section_heading_wrapper + .content_area .anim_text path{
+  opacity: 0;
+}
+
+.key_features.pmc_key_features  .section_heading_wrapper.aos-init.aos-animate + .content_area .anim_text path{
+  opacity: 0;
+  animation: fadeIn 0.025s ease forwards;
+  animation-delay: calc(var(--i) * 0.025s);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.methodology.pmc_methodology .section_heading_wrapper + .content_area .methodology_layer2,
+.methodology.pmc_methodology .section_heading_wrapper + .content_area .methodology_layer3{
+  transform: translateY(-50%);
+  transition: 2s all;
+  opacity: 0;
+  transition-delay: 2s;
+}
+
+.methodology.pmc_methodology .section_heading_wrapper.aos-init.aos-animate + .content_area .methodology_layer2,
+.methodology.pmc_methodology .section_heading_wrapper.aos-init.aos-animate + .content_area .methodology_layer3{
+  transform: translateY(0%);
+  opacity: 0.5;
+}
+
+.pi_system .section_heading_wrapper.left_align {
+  max-width: 1246px;
+}
+
+
+
 @media screen and (max-width: 1600px) {
+  .design-wrapper{
+    margin-top: -164px;
+  }
 
   .methodology .content_area .image{
   width: 60%;
@@ -1632,6 +1793,10 @@ display: block;
 }
 
 @media screen and (max-width: 1024px) {
+
+    .design-wrapper{
+    margin-top: -250px;
+  }
   .implementation_approach .container .content_area{
     margin-top: 50px;
   }
@@ -2005,7 +2170,9 @@ ul.icon_with_text{
 }
 
 @media screen and (max-width: 767px) {
-
+  .design-wrapper{
+    margin-top: -300px;
+  }
     .core_values .content_area ._card img{
     width: 100px;
   }
@@ -2290,5 +2457,12 @@ ul.list_with_icon.grid li{
 @media screen and (min-width: 1024px) {
   .mobile_menu_btn {
     display: none;
+  }
+}
+
+
+@media screen and (max-width:500px) {
+   .design-wrapper{
+    margin-top: -80vw;
   }
 }

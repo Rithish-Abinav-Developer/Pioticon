@@ -1,15 +1,37 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
   const [shownav, setShownav] = useState(false);
   const [showSubMenu, setShowSubMenu] = useState(false);
   const pathname = usePathname(); 
+const [fixedHeader, setFixedHeader] = useState(false);
+
+ useEffect(() => {
+  let lastScrollY = window.scrollY;
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY < lastScrollY && currentScrollY > 100) {
+      setFixedHeader(true);
+    } else {
+      setFixedHeader(false);
+    }
+
+    lastScrollY = currentScrollY;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+
 
   return (
-    <header>
+    <header className={`${fixedHeader ? "fixed_header" : ""}`}>
       <div className="container">
         <Link href="/" className="logo">
           <img src="/images/logo.svg" alt="logo" />

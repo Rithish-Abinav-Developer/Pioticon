@@ -1,12 +1,25 @@
+"use client"
 import AnimatedHeading from '@/app/Components/AnimatedHeading'
 import ClientsBG from '@/app/Components/ClientsBG'
 import Footer from '@/app/Components/Footer'
 import HomepageIndustrySlider from '@/app/Components/HomepageIndustrySlider '
 import HomepageITestimonialSlider from '@/app/Components/HomepageITestimonialSlider'
+import PMCApproach from '@/app/Components/PMCApproach'
+import PMCMethodology from '@/app/Components/PMCMethodology'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function page() {
+
+ useEffect(() => {
+  const paths = document.querySelectorAll('.anim_text path');
+
+  paths.forEach((path, index) => {
+    path.style.setProperty('--i', index);
+  });
+}, []);
+
+
   return (
     <>
       <AnimatedHeading/>
@@ -134,7 +147,7 @@ export default function page() {
   </div>
 </section>
 
-<section className='common_section key_features dark_bg_with_layer'>
+<section className='common_section key_features pmc_key_features dark_bg_with_layer'>
 
 
 <div className='container'>
@@ -145,7 +158,8 @@ export default function page() {
 
 <div className='content_area'>
 <div className='image' data-aos="fade-up">
-  <img src='/images/pmc_implementation_approach.svg' alt='key_features' width="100%" />
+  {/* <img src='/images/pmc_implementation_approach.svg' alt='key_features' width="100%" /> */}
+  <PMCApproach/>
 </div>
 
  <div className='content key_cards_grid key_cards_grid_4 no_padding' >
@@ -183,7 +197,7 @@ export default function page() {
 </section>
 
 
-<section className='common_section mis_vis methodology'>
+<section className='common_section mis_vis methodology pmc_methodology'>
   <div className='container'>
     <div className='section_heading_wrapper left_align' data-aos="fade-up">
       <h3 className='sub_heading'>Our Mission, Vision and Purpose</h3>
@@ -192,7 +206,8 @@ export default function page() {
 
     <div className='content_area'>
   <div className='image' data-aos="fade-right">
-    <img src='/images/piotocon_methodology.svg' alt='piotocon_methodology' width='100%' />
+    {/* <img src='/images/piotocon_methodology.svg' alt='piotocon_methodology' width='100%' /> */}
+    <PMCMethodology/>
   </div>
   <div className='content' data-aos="fade-left">
     <ul className='list_with_icon'>
@@ -236,23 +251,25 @@ export default function page() {
 </section>
 
 
-<section className='common_section key_features dark_bg_with_layer'>
+<section className='common_section key_features dark_bg_with_layer pi_system'>
 
 
 <div className='container'>
-    <div className='section_heading_wrapper' data-aos="fade-up">
+    <div className='section_heading_wrapper left_align' data-aos="fade-up">
       <h3 className='sub_heading white_text'>Pi System</h3>
-      <h2 className='main_heading white_text'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+      <h2 className='main_heading white_text'>A Structured System for Continuous Project <span>Performance</span></h2>
       <p className='text white_text'>At PIOTICON, our commitment to continuous improvement is evident through our integrated performance improvement system, known as the Pi system. Our teams, comprised of trained professionals, possess deep subject matter knowledge, excel in expert execution, and consistently deliver value-added outcomes.</p>
+      <Link href='#' className='common_btn'><span>Enquire Now <img src='/images/arrow-right.svg' alt='logo' /></span> </Link>
+
     </div>
 
-<div className='content_area'>
+{/* <div className='content_area'>
 <div className='image' data-aos="fade-up">
   <img src='/images/pi_system.svg' alt='pi_system' width="100%" />
 </div>
 
 
-</div>
+</div> */}
 
 </div>
 
