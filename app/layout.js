@@ -18,6 +18,28 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+       <link
+          rel="stylesheet"
+          href="https://projects.candyboxdesign.com/wp-content/uploads/elementor/css/post-1.css"
+        />
+        <link
+          rel="stylesheet"
+          href="https://projects.candyboxdesign.com/wp-content/uploads/elementor/css/post-7.css"
+        />
+          <link
+          rel="stylesheet"
+          href="https://projects.candyboxdesign.com/wp-content/uploads/elementor/css/post-15.css"
+        />
+          <link
+          rel="stylesheet"
+          href="https://projects.candyboxdesign.com/wp-content/uploads/elementor/css/post-18.css"
+        />
+          <link
+          rel="stylesheet"
+          href="https://projects.candyboxdesign.com/wp-content/plugins/elementor/assets/css/frontend.min.css"
+        />
+      </head>
       <body className={manrope.className}>
         <AOSProvider>
           <Header />
