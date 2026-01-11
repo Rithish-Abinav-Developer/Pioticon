@@ -19,7 +19,7 @@ export default function AboutUs() {
             <li ><Link className='sub_heading white_text' href="/about-us">About Us</Link></li>
         </ul>
       </div>
-      <h2 className='main_heading white_text'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+      <h2 className='main_heading white_text'>Integrated Project Controls for Confident <span>Project Delivery</span></h2>
       <p className='text white_text w_80 t_w_100'>Integrated Project Management and Control service provider with a focus of building Performance Improvement-Oriented Technique with Intelligent Coherent Network.</p>
 
     </div>
