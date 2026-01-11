@@ -34,7 +34,7 @@ export default function page() {
             <li ><Link className='sub_heading white_text' href="/services/pmc-services">PMC Services</Link></li>
         </ul>
       </div>
-      <h2 className='main_heading white_text'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+      <h2 className='main_heading white_text'>Project Management & Control <br className='desktop_break'/>for <span>Complex Delivery</span></h2>
       <p className='text white_text w_80 t_w_100'>Integrated Project Management and Control service provider with a focus of building Performance Improvement-Oriented Technique with Intelligent Coherent Network.</p>
 
     </div>
@@ -53,7 +53,7 @@ export default function page() {
         <div className='left_content section_heading_wrapper left_align'>
           
                  <h3 className='sub_heading white_text'>PMC Services</h3>
-      <h2 className='main_heading white_text'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+      <h2 className='main_heading white_text'>Comprehensive PMC Services Anchored in <span>Governance</span></h2>
            
         </div>
 
@@ -104,11 +104,11 @@ export default function page() {
 </section>
 
 
-<section className='common_section mis_vis'>
+<section className='common_section mis_vis section_with_blue_layer'>
   <div className='container'>
     <div className='section_heading_wrapper left_align' data-aos="fade-up">
       <h3 className='sub_heading'>Our Mission, Vision and Purpose</h3>
-      <h2 className='main_heading'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+      <h2 className='main_heading'>Purposeful Governance Driving Project <span>Performance</span></h2>
     </div>
 
     <div className='content_area'>
@@ -200,8 +200,8 @@ export default function page() {
 <section className='common_section mis_vis methodology pmc_methodology'>
   <div className='container'>
     <div className='section_heading_wrapper left_align' data-aos="fade-up">
-      <h3 className='sub_heading'>Our Mission, Vision and Purpose</h3>
-      <h2 className='main_heading'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+      <h3 className='sub_heading'>The PIOTICON Methodology</h3>
+      <h2 className='main_heading'>A comprehensive methodology for assured <span>project success</span></h2>
     </div>
 
     <div className='content_area'>
@@ -212,7 +212,7 @@ export default function page() {
   <div className='content' data-aos="fade-left">
     <ul className='list_with_icon'>
 <li>
-     <img className='list_icon' src='/images/vision.svg' alt='about_mis_vis' />
+     <img className='list_icon' src='/images/first_principle_thinking.svg' alt='about_mis_vis' />
      <div className='list_content'>
         <h4 className='list_title text_yellow'>First principle thinking </h4>
         <p className='text'>Focus on first principle thinking to solve problems. </p>
@@ -220,7 +220,7 @@ export default function page() {
 </li>
 
 <li>
-     <img className='list_icon' src='/images/mission.svg' alt='about_mis_vis' />
+     <img className='list_icon' src='/images/pcda_process.svg' alt='about_mis_vis' />
      <div className='list_content'>
         <h4 className='list_title text_green'>PDCA process</h4>
         <p className='text'>Seamlessly integrate the macro and micro levels, utilizing an efficient plan-do-check-act process.</p>
@@ -228,7 +228,7 @@ export default function page() {
 </li>
 
 <li>
-     <img className='list_icon' src='/images/purpose.svg' alt='about_mis_vis' />
+     <img className='list_icon' src='/images/top_bottom.svg' alt='about_mis_vis' />
      <div className='list_content'>
         <h4 className='list_title text_blue' >Top-down+Bottom-up technique</h4>
         <p className='text'>Granular breaking down of project levels, enabling top-down planning, monitoring, and control, as well as extraction of critical and meaningful insights from the bottom-up level to enable accuracy.</p>
@@ -236,9 +236,9 @@ export default function page() {
 </li>
 
 <li>
-     <img className='list_icon' src='/images/purpose.svg' alt='about_mis_vis' />
+     <img className='list_icon' src='/images/integrated_approach.svg' alt='about_mis_vis' />
      <div className='list_content'>
-        <h4 className='list_title text_blue' >An integrated approach </h4>
+        <h4 className='list_title' style={{color:'#B1B1B1'}} >An integrated approach </h4>
         <p className='text'>Thoroughly understanding project scope and complexity and adopting an integrated approach to implement functional processes and systems that align with the project objectives.</p>
      </div>
 </li>

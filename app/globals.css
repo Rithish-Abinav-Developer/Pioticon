@@ -451,12 +451,13 @@ footer .main_heading span span {
   margin-top: 40px;
 }
 
-.who_we_are {
+.section_with_blue_layer {
   position: relative;
   overflow: hidden;
 }
 
-.who_we_are:before {
+
+.section_with_blue_layer::before {
   content: "";
   z-index: 1;
   background-color: #388dcb;
@@ -555,6 +556,7 @@ footer .main_heading span span {
   transform: rotate(45deg) translateX(42%) translateY(20%);
   animation: layer_circle_after 10s infinite alternate linear;
 }
+
 
 @keyframes layer_circle_before {
   to {
@@ -789,6 +791,24 @@ footer .main_heading span span {
   font-weight: 500;
   line-height: 32px;
   color: var(--yellow);
+  font-family: var(--clashDisplay);
+}
+
+.testimonial_slider .test_card .test_detail{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.testimonial_slider .test_card .test_detail::before{
+  position: absolute;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  left: 0;
+  content: '-';
 }
 
 .blog_slider .swiper-slide {
@@ -855,7 +875,7 @@ footer .top_section .content {
   display: flex;
   justify-content: space-between;
   padding: 40px 0;
-  margin: 40px 0;
+  margin: 40px 0 24px 0;
   border-top: solid white 1px;
   border-bottom: solid white 1px;
 }
@@ -1456,12 +1476,12 @@ ul.icon_with_text li img{
   align-items: center;
 }
 .methodology .content_area .image{
-  width: 70%;
+  width: 69%;
   margin-left: -10%;
 }
 .methodology .content_area .content{
-  width: 40%;
-  min-width: 40%;
+  width: 41%;
+  min-width: 41%;
 }
 
 .implementation_approach .section_heading_wrapper{
@@ -2073,6 +2093,11 @@ ul.elementor-icon-list-items{
   width: 100%;
 }
 
+.footer_copyrights{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 
 @media screen and (max-width: 1600px) {
   .blog_detail .container main .blog_title{
@@ -2608,7 +2633,7 @@ ul.icon_with_text{
     font-size: 24px;
     line-height: 32px;
   }
-  .who_we_are:before {
+  .section_with_blue_layer::before {
     filter: blur(150px);
     width: 500px;
     height: 500px;
@@ -2657,6 +2682,11 @@ ul.icon_with_text{
 }
 
 @media screen and (max-width: 767px) {
+
+  .section_heading_wrapper {
+    text-align: left;
+    align-items: flex-start;
+}
 
     #service_form input{
     min-height: 40px;

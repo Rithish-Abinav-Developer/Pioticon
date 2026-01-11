@@ -71,7 +71,7 @@ export default function HomepageServiceSlider() {
 
          <SwiperSlide>
         <div className="content">
-          <h3>PMC Services</h3>
+          <h3>Digital Solution Services</h3>
           <p className="text">
            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
@@ -82,13 +82,13 @@ export default function HomepageServiceSlider() {
           </Link>
         </div>
         <div className="image">
-          <img src="/images/pmc-service.png" width='100%'></img>
+          <img src="/images/digital-solution-services.png" width='100%'></img>
         </div>
       </SwiperSlide>
 
           <SwiperSlide>
         <div className="content">
-          <h3>PMC Services</h3>
+          <h3>Coaching and Development</h3>
           <p className="text">
            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
@@ -99,7 +99,7 @@ export default function HomepageServiceSlider() {
           </Link>
         </div>
         <div className="image">
-          <img src="/images/pmc-service.png" width='100%'></img>
+          <img src="/images/coaching-and-development.png" width='100%'></img>
         </div>
       </SwiperSlide>
     </Swiper>

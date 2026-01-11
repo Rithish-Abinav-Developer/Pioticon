@@ -54,11 +54,11 @@ export default function AboutUs() {
 </section>
 
 
-<section className='common_section mis_vis'>
+<section className='common_section mis_vis section_with_blue_layer'>
   <div className='container'>
     <div className='section_heading_wrapper left_align' data-aos="fade-up">
       <h3 className='sub_heading'>Our Mission, Vision and Purpose</h3>
-      <h2 className='main_heading'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+      <h2 className='main_heading'>Purposeful Governance Driving Project <span>Performance</span></h2>
     </div>
 
     <div className='content_area'>
@@ -109,7 +109,7 @@ export default function AboutUs() {
 <div className='container'>
     <div className='section_heading_wrapper left_align' data-aos="fade-up">
       <h3 className='sub_heading white_text'>Our Core Values</h3>
-      <h2 className='main_heading white_text'>The Structural Foundation for <span>High-Integrity Delivery.</span></h2>
+      <h2 className='main_heading white_text'>Purposeful Governance Driving Project <span>Performance</span></h2>
     </div>
 
 <div className='content_area'>
@@ -203,7 +203,7 @@ export default function AboutUs() {
 <div className='container'>
     <div className='section_heading_wrapper left_align' data-aos="fade-up">
       <h3 className='sub_heading white_text'>The PIOTICON Model</h3>
-      <h2 className='main_heading white_text'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+      <h2 className='main_heading white_text'>An Integrated Model for Governing Project <span>Performance</span></h2>
     </div>
 
 <div className='content_area'>
@@ -251,7 +251,7 @@ export default function AboutUs() {
   <div className='container'>
     <div className='section_heading_wrapper left_align' data-aos="fade-up">
       <h3 className='sub_heading'>Our strategy</h3>
-      <h2 className='main_heading'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+      <h2 className='main_heading'>A Strategy Built on Integration and <span>Execution</span></h2>
     </div>
 
     <div className='content_area'>
@@ -304,7 +304,7 @@ export default function AboutUs() {
 <div className='container'>
     <div className='section_heading_wrapper left_align' data-aos="fade-up">
       <h3 className='sub_heading white_text'>Key Features</h3>
-      <h2 className='main_heading white_text'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+      <h2 className='main_heading white_text'>Key Capabilities Enabling <span>Integrated Project Performance</span></h2>
     </div>
 
 <div className='content_area'>
@@ -340,7 +340,7 @@ export default function AboutUs() {
 <div className='container'>
     <div className='section_heading_wrapper left_align' data-aos="fade-up">
       <h3 className='sub_heading '>The PIOTICON Framework</h3>
-      <h2 className='main_heading '>3-Step framework to ensure project <span>success and performance excellence</span></h2>
+      <h2 className='main_heading '>3-Step framework to ensure project success and <span>performance excellence</span></h2>
 
     </div>
 

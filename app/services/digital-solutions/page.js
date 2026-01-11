@@ -140,7 +140,7 @@ export default function page() {
             <li ><Link className='sub_heading white_text' href="/services/digital-solutions">Digital Solutions</Link></li>
         </ul>
       </div>
-      <h2 className='main_heading white_text'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+      <h2 className='main_heading white_text'><span>Digital Solutions</span> Integrated into Project Performance</h2>
       <p className='text white_text w_80 t_w_100'>Integrated Project Management and Control service provider with a focus of building Performance Improvement-Oriented Technique with Intelligent Coherent Network.</p>
 
     </div>
@@ -159,7 +159,7 @@ export default function page() {
         <div className='left_content section_heading_wrapper left_align'>
           
                  <h3 className='sub_heading white_text'>Digital Solutions</h3>
-      <h2 className='main_heading white_text'>Lorem ipsum dolor sit amet, consectetur <span>adipiscing elit</span></h2>
+      <h2 className='main_heading white_text'>Digital Capabilities Supporting Integrated <span>Project Performance</span></h2>
            
         </div>
 

@@ -2,14 +2,17 @@ import Link from 'next/link'
 import React from 'react'
 
 export default function Footer() {
+
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer>
 
 <div className='container'>
     <div className='top_section' data-aos='fade-up'>
         <div className='content'>
-            <h3 className='main_heading white_text'>Initiate High-Level <span>Governance Discussion.</span></h3>
-            <p className='text white_text'>Your project's performance is a function of its governing structure. If systemic complexity or operational fragility is compromising your delivery, contact us to initiate a focused, structural dialogue on reform.</p>
+            <h3 className='main_heading white_text'>A Conversation Focused on <span>Clarity and Control</span></h3>
+            <p className='text white_text'>Every project reaches moments where structure matters more than speed. <br className='desktop_break'/>We work with leadership teams to bring coherence, visibility, and confidence to complex project environments.</p>
         </div>
               <Link href='#' className='common_btn'><span>Contact Us <img src='/images/arrow-right.svg' alt='logo' /></span> </Link>
 
@@ -43,11 +46,11 @@ NZBN: 9429047277366, Auckland </Link> </li>
   <div className='footer_links' data-aos='fade-up' data-aos-delay='200'>
          <h4>Quick Links</h4>
          <ul className='page_links'>
-            <li><Link href='#'>Home</Link></li>
-            <li><Link href='#'>About Us</Link></li>
-            <li><Link href='#'>Projects</Link></li>
-            <li><Link href='#'>Blogs</Link></li>
-            <li><Link href='#'>Contact Us</Link></li>
+            <li><Link href='/'>Home</Link></li>
+            <li><Link href='/about-us'>About Us</Link></li>
+            <li><Link href='/projects'>Projects</Link></li>
+            <li><Link href='/blogs'>Blogs</Link></li>
+            <li><Link href='/contact-us'>Contact Us</Link></li>
         </ul>
     </div>
 
@@ -56,7 +59,7 @@ NZBN: 9429047277366, Auckland </Link> </li>
          <ul className='page_links'>
             <li className='no_link'>PMC Services</li>
             <li><Link href='#'>Overview </Link></li>
-            <li><Link href='#'>PMC Governance</Link></li>
+            <li><Link href='/services/pmc-services/pmc-governance'>PMC Governance</Link></li>
             <li><Link href='#'>Integrated Project Controls</Link></li>
             <li><Link href='#'>Scope, Strategy & Change</Link></li>
             <li><Link href='#'>Planning & Scheduling </Link></li>
@@ -83,6 +86,10 @@ NZBN: 9429047277366, Auckland </Link> </li>
 
 </div>
 
+
+<p className='footer_copyrights text white_text text_center'>
+  Pioticon © {currentYear} All Rights Reserved.
+</p>
 
 </div>
 

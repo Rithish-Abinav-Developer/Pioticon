@@ -24,7 +24,7 @@ export default function page() {
    <>
    <HomepageHeroBanner />
 
-<section className='common_section who_we_are'>
+<section className='common_section who_we_are section_with_blue_layer'>
   <div className='container'>
     <div className='section_heading_wrapper left_align' data-aos="fade-up">
       <h3 className='sub_heading'>Who We Are</h3>
@@ -237,7 +237,7 @@ export default function page() {
 <div className='container'>
     <div className='section_heading_wrapper left_align' data-aos="fade-up">
       <h3 className='sub_heading '>Blogs</h3>
-      <h2 className='main_heading '>Structural Root Cause <span>Analysis and Reform Pathways.</span></h2>
+      <h2 className='main_heading '>Structural Root Cause Analysis and <span>Reform Pathways.</span></h2>
             <Link href='#' className='common_btn'><span>Know More<img src='/images/arrow-right.svg' alt='logo' /></span> </Link>
 
     </div>
